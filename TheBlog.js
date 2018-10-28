@@ -7,12 +7,12 @@ fb.ref("posts").once('value').then(data => {
     base = savedPosts.length;
     postsDB = savedPosts;
 
-    // Nacteni poctu ulozenych prispevku
+    // Nacteni ulozenych prispevku
 
-    postsDB.forEach (post => {
+    postsDB.forEach(post => {
         $(`.postSec`).prepend(`<h4 class="tittle">${post[`tittle`]}</h4>
                 <div class="post">${post[`text`]}</div>`);
-            
+
     });
 
 
@@ -46,11 +46,12 @@ $(`form`).on(`submit`, event => {
             fb.ref(path).set(dataToSave);
             $(`input[name=inputTittle]`).val(``);
             $(`textarea`).val(``);
-
+            $(`.postSec`).prepend(`<h4 class="tittle">${dataToSave[`tittle`]}</h4>
+            <div class="post">${dataToSave[`text`]}</div>`);
         }
-        else { alert(`Your Post is empty`) }
+        else { alert(`Your Post is empty`) };
     }
-    else { alert(`Your Tittle is empty`) }
+    else { alert(`Your Tittle is empty`) };
 
 });
 
