@@ -2,6 +2,7 @@
 // Nacteni poctu ulozenych prispevku
 let base = 0;
 let postsDB;
+let idbutton;
 fb.ref("posts").once('value').then(data => {
     let savedPosts = data.val();
     base = savedPosts.length;
@@ -10,10 +11,9 @@ fb.ref("posts").once('value').then(data => {
     // Nacteni ulozenych prispevku
 
     postsDB.forEach(post => {
-        $(`.postSec`).prepend(`<h4 class="tittle">${post[`tittle`]}</h4>
+        $(`.postSec`).prepend(`<h4 class="tittle">${post[`postId`]}. ${post[`tittle`]}</h4>
                 <div class="post">${post[`text`]}</div>
-                
-                <div class="delete"><button>Delete post</button></div>`);
+                <div class="delete"><button id="id${post[`postId`]}">Delete post</button></div>`);
 
     });
 
@@ -43,17 +43,23 @@ $(`form`).on(`submit`, event => {
                 text: `${post}`,
                 postId: `${base}`
             };
-            base = counter;
-            fb.ref(path).set(dataToSave);
+                        fb.ref(path).set(dataToSave);
             $(`input[name=inputTittle]`).val(``);
             $(`textarea`).val(``);
-            $(`.postSec`).prepend(`<h4 class="tittle">${dataToSave[`tittle`]}</h4>
+            $(`.postSec`).prepend(`<h4 class="tittle">${dataToSave[`postId`]}. ${dataToSave[`tittle`]}</h4>
             <div class="post">${dataToSave[`text`]}</div>
-            <div class="delete"><button>Delete post</button></div>`);
+            <div class="delete"><button id="id${base}">Delete post</button></div>`);
+            base = counter;
         }
         else { alert(`Your Post is empty`) };
     }
     else { alert(`Your Tittle is empty`) };
-
 });
+
+$(`.postSec`).on(`click`, `button`, btn => {
+    console.log($(btn.target).attr(`id`));
+});
+    
+
+
 
