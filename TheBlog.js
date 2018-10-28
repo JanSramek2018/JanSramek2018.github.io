@@ -1,28 +1,52 @@
-let base = 0;
-let counter = 0;
 
+// Nacteni poctu ulozenych prispevku
+let base = 0;
+let postsDB;
+fb.ref("posts").once('value').then(data => {
+    let savedPosts = data.val();
+    base = savedPosts.length;
+    postsDB = savedPosts;
+
+    // Nacteni poctu ulozenych prispevku
+
+    postsDB.forEach (post => {
+        $(`.postSec`).prepend(`<h4 class="tittle">${post[`tittle`]}</h4>
+                <div class="post">${post[`text`]}</div>`);
+            
+    });
+
+
+
+    // Neni potreba
+    console.log(`${savedPosts}`);
+    savedPosts.forEach(element => {
+        console.log(element);
+    });
+    // Neni potreba
+});
+
+
+// Kliknuti na Submit
 $(`form`).on(`submit`, event => {
     event.preventDefault();
-    let title = $(`input`).val();
+    let tittle = $(`input`).val();
     let post = $(`textarea`).val();
-    let tittleCount = title.length;
+    let tittleCount = tittle.length;
     let postCount = post.length;
-        if (tittleCount > 0) {
+    if (tittleCount > 0) {
         if (postCount > 0) {
             counter = base + 1;
-            let path = `posts/${counter}`;
-            base = counter;
+            let path = `posts/${base}`;
             let dataToSave = {
-                title: `${title}`,
+                tittle: `${tittle}`,
                 text: `${post}`,
-                postId: `${counter}`
+                postId: `${base}`
             };
+            base = counter;
             fb.ref(path).set(dataToSave);
-            $(`.postSec`).prepend(`<h4 class="title">${title}</h4>
-            <div class="post">${post}</div>`);
-            $(`input[name=inputTitle]`).val(``);
+            $(`input[name=inputTittle]`).val(``);
             $(`textarea`).val(``);
-            
+
         }
         else { alert(`Your Post is empty`) }
     }
