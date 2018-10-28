@@ -109,6 +109,21 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyC-_hjkKFAoe1P70L8MfXODDMpquA2L7S4",
+        authDomain: "myblog-test-32dc3.firebaseapp.com",
+        databaseURL: "https://myblog-test-32dc3.firebaseio.com",
+        projectId: "myblog-test-32dc3",
+        storageBucket: "myblog-test-32dc3.appspot.com",
+        messagingSenderId: "37170006021"
+    };
+    firebase.initializeApp(config);
+    firebase.initializeApp(config);
+    fb = firebase.database();
+    </script>
     <script src="TheBlog.js"></script>
 
 
