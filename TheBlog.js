@@ -12,8 +12,8 @@ fb.ref("posts").once('value').then(data => {
     postsDB.forEach(post => {
         $(`.postSec`).prepend(`<h4 class="tittle">${post[`tittle`]}</h4>
                 <div class="post">${post[`text`]}</div>
-                <button id="update">Update post</button>
-                <button id="delete">Delete post</button>`);
+                
+                <div class="delete"><button>Delete post</button></div>`);
 
     });
 
@@ -49,8 +49,7 @@ $(`form`).on(`submit`, event => {
             $(`textarea`).val(``);
             $(`.postSec`).prepend(`<h4 class="tittle">${dataToSave[`tittle`]}</h4>
             <div class="post">${dataToSave[`text`]}</div>
-            <button id="update">Update post</button>
-            <button id="delete">Delete post</button>`);
+            <div class="delete"><button>Delete post</button></div>`);
         }
         else { alert(`Your Post is empty`) };
     }
