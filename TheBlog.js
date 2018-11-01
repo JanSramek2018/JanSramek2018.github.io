@@ -3,6 +3,8 @@
 let base = 0;
 let postsDB;
 let idbutton;
+let removeID;
+
 fb.ref("posts").once('value').then(data => {
     let savedPosts = data.val();
     base = savedPosts.length;
@@ -11,11 +13,11 @@ fb.ref("posts").once('value').then(data => {
     // Nacteni ulozenych prispevku
 
     postsDB.forEach(post => {
-        $(`.postSec`).prepend(`<h4 class="tittle">${post[`postId`]}. ${post[`tittle`]}</h4>
-                <div class="post">${post[`text`]}</div>
-                <div class="delete"><button id="id${post[`postId`]}">Delete post</button></div>`);
-
-    });
+        $(`.postSec`).prepend(`<div id="id${post[`postId`]}">
+                    <h4 class="tittle">${post[`tittle`]}</h4>
+                    <div class="post">${post[`text`]}</div>
+                    <div class="delete"><button id="id${post[`postId`]}">Delete</button></div>
+        </div>`);
 
 
     // Neni potreba
@@ -24,7 +26,9 @@ fb.ref("posts").once('value').then(data => {
         console.log(element);
     });
     // Neni potreba
-});
+})
+})
+;
 
 
 // Kliknuti na Submit
@@ -38,28 +42,33 @@ $(`form`).on(`submit`, event => {
         if (postCount > 0) {
             counter = base + 1;
             let path = `posts/${base}`;
-            let dataToSave = {
+            let postInfo = {
                 tittle: `${tittle}`,
                 text: `${post}`,
                 postId: `${base}`
             };
-                        fb.ref(path).set(dataToSave);
+                        fb.ref(path).set(postInfo);
             $(`input[name=inputTittle]`).val(``);
             $(`textarea`).val(``);
-            $(`.postSec`).prepend(`<h4 class="tittle">${dataToSave[`postId`]}. ${dataToSave[`tittle`]}</h4>
-            <div class="post">${dataToSave[`text`]}</div>
-            <div class="delete"><button id="id${base}">Delete post</button></div>`);
+            $(`.postSec`).prepend(
+                `<div id="id${postInfo[`postId`]}">
+                    <h4 class="tittle">${postInfo[`tittle`]}</h4>
+                    <div class="post">${postInfo[`text`]}</div>
+                    <div class="delete"><button id="id${postInfo[`postId`]}">Delete</button></div>
+                </div>`);
             base = counter;
+                
         }
         else { alert(`Your Post is empty`) };
     }
     else { alert(`Your Tittle is empty`) };
 });
 
+
+// Smazani prispevku
 $(`.postSec`).on(`click`, `button`, btn => {
     console.log($(btn.target).attr(`id`));
-});
-    
-
-
-
+    removeID = $(btn.target).attr(`id`);
+    fb.ref(`posts/${removeID}`).remove();
+    console.log(`${removeID}`);
+})
