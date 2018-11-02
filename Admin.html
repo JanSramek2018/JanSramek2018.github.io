@@ -20,7 +20,20 @@
                 <a href="Admin.html" class="topMenu">Admin</a>
             </div>
         </h4>
-   
+        <h2>Add a new post</h2>
+        <h4>
+            <form>
+                <label>Title
+                    <input type="text" placeholder="Please, write your post's tittle" name="inputTittle">
+                </label>
+                <label>Content
+                    <textarea name="inputPost" placeholder="Please, write your post here"></textarea>
+                </label>
+                <input type="submit" id="idSubmit">
+            </form>
+            <button id="update">Update post</button>
+        </h4>
+
         <h2>Posts</h2>
         <div class="postSec">
         </div>
@@ -43,7 +56,7 @@
         firebase.initializeApp(config);
         fb = firebase.database();
     </script>
-    <script src="Index.js"></script>
+    <script src="Admin.js"></script>
 
 
 </body>

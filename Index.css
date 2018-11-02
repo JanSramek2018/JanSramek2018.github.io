@@ -11,10 +11,36 @@ html {
     background-color: black;
     color: white;
     width: 750px;
-    height: 40px;
+    height: 45px;
+    text-indent: 10px;
+    border-radius: 5px;
+    vertical-align: -webkit-baseline-middle;
+    font-size: 37px;
+    font-style: bold;
+    }
+#menu {
+    background-color: black;
+    color: white;
+    width: 750px;
+    height: 28px;
     text-indent: 5px;
     border-radius: 5px;
+    display: inline-block;
+    }
+.topMenu {
+    color: white;
+    text-decoration-line: none;
+    margin: 0px 10px 0px 10px;
+    padding: 0px 0px 0px 0px;
+    vertical-align: -webkit-baseline-middle;
+    
+
+
+
+
 }
+
+
 label {
     display: block;
     margin: 0px 0px 20px;
