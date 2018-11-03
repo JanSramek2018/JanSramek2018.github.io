@@ -47,7 +47,7 @@ $(`form`).on(`submit`, event => {
                 text: `${post}`,
                 postId: `${base}`
             };
-                        fb.ref(path).set(postInfo);
+            fb.ref(path).set(postInfo);
             $(`input[name=inputTittle]`).val(``);
             $(`textarea`).val(``);
             $(`.postSec`).prepend(
