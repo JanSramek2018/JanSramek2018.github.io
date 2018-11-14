@@ -2,7 +2,7 @@ let base = 0;
 let counter = 0;
 
 
-// Nacteni poctu ulozenych prispevku = DODELAT
+// Nacteni poctu ulozenych prispevku
 let todosDB;
 
 fb.ref("todos").once('value').then(data => {
@@ -15,7 +15,6 @@ fb.ref("todos").once('value').then(data => {
     todosDB.forEach(todo => {
         $(`ul`).append(`<li id="ID${todo[todoId]}">${todo[text]}</li>`);
     });
-// Dodelat
 
 $(`li`).on(`click`, event => {
     $(event.target).toggleClass(`wLine`);
@@ -34,12 +33,12 @@ $(`form`).on(`submit`, event => {
             todoId: `${base}`
         };
         fb.ref(path).set(todoInfo);
-        $(`ul`).append(`<li id="ID${counter}">${todo}</li>`);
+        $(`ul`).append(`<li id="id${todoInfo[`todoId`]}">${todo}</li>`);
         base = counter;
     }
     else { alert(`Your Todo is empty`) };
 
-    $(`#ID${counter}`).on(`click`, event => {
+    $(`#id${counter}`).on(`click`, event => {
         $(event.target).toggleClass(`wLine`);
     })
 })
