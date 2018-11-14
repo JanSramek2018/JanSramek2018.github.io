@@ -1,9 +1,8 @@
 let base = 0;
 let counter = 0;
-
+let todosDB;
 
 // Nacteni poctu ulozenych prispevku
-let todosDB;
 
 fb.ref("todos").once('value').then(data => {
     let savedTodos = data.val();
@@ -17,10 +16,12 @@ fb.ref("todos").once('value').then(data => {
     });
 });
 
-$(`li`).on(`click`, event => {
+$(`ul`).on(`click`, event => {
     $(event.target).toggleClass(`wLine`);
 })
+
 // Kliknuti na Submit
+
 $(`form`).on(`submit`, event => {
     event.preventDefault();
     let todoText = $(`input`).val();
@@ -39,7 +40,7 @@ $(`form`).on(`submit`, event => {
     }
     else { alert(`Your Todo is empty`) };
 
-    $(`#id${counter}`).on(`click`, event => {
+    $(`#id${base}`).on(`click`, event => {
         $(event.target).toggleClass(`wLine`);
     });
 
