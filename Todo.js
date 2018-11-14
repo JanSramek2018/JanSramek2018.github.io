@@ -15,6 +15,7 @@ fb.ref("todos").once('value').then(data => {
     todosDB.forEach(todo => {
         $(`ul`).append(`<li id="ID${todo[todoId]}">${todo[text]}</li>`);
     });
+});
 
 $(`li`).on(`click`, event => {
     $(event.target).toggleClass(`wLine`);
@@ -29,16 +30,16 @@ $(`form`).on(`submit`, event => {
         counter = base + 1;
         let path = `todos/${base}`;
         let todoInfo = {
-            text: `${todoText}`,
+            textId: `${todoText}`,
             todoId: `${base}`
         };
         fb.ref(path).set(todoInfo);
-        $(`ul`).append(`<li id="id${todoInfo[`todoId`]}">${todo}</li>`);
+        $(`ul`).append(`<li id="id${todoInfo[`todoId`]}">${todoInfo[`textId`]}</li>`);
         base = counter;
     }
     else { alert(`Your Todo is empty`) };
+});
 
-    $(`#id${counter}`).on(`click`, event => {
-        $(event.target).toggleClass(`wLine`);
-    })
+$(`#id${counter}`).on(`click`, event => {
+    $(event.target).toggleClass(`wLine`);
 })
