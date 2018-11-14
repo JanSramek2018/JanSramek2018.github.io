@@ -38,8 +38,8 @@ $(`form`).on(`submit`, event => {
         base = counter;
     }
     else { alert(`Your Todo is empty`) };
-});
+    $(`#id${todoInfo[`todoId`]}`).on(`click`, event => {
+        $(event.target).toggleClass(`wLine`);
+    });
 
-$(`#id${counter}`).on(`click`, event => {
-    $(event.target).toggleClass(`wLine`);
 })
