@@ -8,7 +8,6 @@ let g = 0;
 let b = 0;
 let t = 0;
 
-
 n = $(`#elementsNumber`).val();
 console.log(`n=${n}`);
 s = $(`#elementsSize`).val();
@@ -23,7 +22,7 @@ g = $(`#elementsG`).val();
 console.log(`g=${g}`);
 b = $(`#elementsB`).val();
 console.log(`b=${b}`);
-t = $(`#elementsT`).val()/100;
+t = $(`#elementsT`).val() / 100;
 console.log(`t=${t}`);
 
 
@@ -34,35 +33,35 @@ console.log(`t=${t}`);
 
 
 
-$(`#elementsSize`).change(function() {   
+$(`#elementsSize`).change(function () {
     s = $(`#elementsSize`).val();
     console.log(`s=${s}`);
     if (elementType === `square`) {
         var c = document.getElementById("myCanvas");
         var ctx = c.getContext("2d");
         ctx.fillRect(20, 20, s, s);
-        }
+    }
 
 })
 
 
-$(`#elementsType`).change(function() {   
-elementType = $(`#elementsType`).val();
-console.log(elementType);
+$(`#elementsType`).change(function () {
+    elementType = $(`#elementsType`).val();
+    console.log(elementType);
 
-if (elementType === `square`) {
-    var c = document.getElementById("myCanvas");
-    var ctx = c.getContext("2d");
-    ctx.fillRect(20, 20, s, s);
+    if (elementType === `square`) {
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        ctx.fillRect(20, 20, s, s);
     }
-    
-if (elementType === `circle`) {
-    var c = document.getElementById("myCanvas");
-    var ctx = c.getContext("2d");
-    ctx.beginPath();
-    ctx.arc(95, 50, 40, 0, 2 * Math.PI);
-    ctx.stroke();
-}
+
+    if (elementType === `circle`) {
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        ctx.beginPath();
+        ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+        ctx.stroke();
+    }
 
 
 
