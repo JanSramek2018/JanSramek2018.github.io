@@ -11,21 +11,21 @@ let t = 0;
 
 
 
-n = $(`#elementsNumber`).val();
+n = $(`#elementsNumber`).val()*1;
 console.log(`n=${n}`);
-s = $(`#elementsSize`).val();
+s = $(`#elementsSize`).val()*1;
 console.log(`s=${s}`);
-x = $(`#elementsX`).val();
+x = $(`#elementsX`).val()*1;
 console.log(`x=${x}`);
-y = $(`#elementsY`).val();
+y = $(`#elementsY`).val()*1;
 console.log(`y=${y}`);
-offset = $(`#elementsR`).val();
+offset = $(`#offset`).val()*1;
 console.log(`offset=${offset}`);
-r = $(`#elementsR`).val();
+r = $(`#elementsR`).val()*1;
 console.log(`r=${r}`);
-g = $(`#elementsG`).val();
+g = $(`#elementsG`).val()*1;
 console.log(`g=${g}`);
-b = $(`#elementsB`).val();
+b = $(`#elementsB`).val()*1;
 console.log(`b=${b}`);
 t = $(`#elementsT`).val() / 100;
 console.log(`t=${t}`);
@@ -35,6 +35,7 @@ let ctx = c.getContext("2d");
 let w = c.width;
 let h = c.height;
 
+
 function drawLine(x1, y1, x2, y2) {
     ctx.beginPath();
     ctx.moveTo(x1, y1);
@@ -43,41 +44,45 @@ function drawLine(x1, y1, x2, y2) {
   }
 
 $(`#elementsSize`).change(function () {
-    s = $(`#elementsSize`).val();
+    s = $(`#elementsSize`).val()*1;
+    offsetSq = $(`#offset`).val()*1; 
     console.log(`s=${s}`);
         
     ctx.clearRect(0, 0, w, h);
     ctx.fillStyle = `rgba(${r},${g},${b},${t})`;
     ctx.strokeStyle = `rgba(${r},${g},${b},${t})`;
     if (elementType === `square`) {
-        
-            ctx.fillRect(x, y, s, s);
-            x = x+ 10;
-            y = y+ 50;
-            ctx.fillRect(x, y, s, s);
-            
-          
+             
+        for (var i = 0; i < n; i = i + 1) {
+        ctx.fillRect(x+offsetSq, y+offsetSq, s, s);
+        offsetSq = (offsetSq+offset);
+        }
     }
     if (elementType === `rectangular`) {
-        ctx.fillRect(20, 20, 2*s, s);
-        ctx.fillRect(2*20, 2*20, 2*s, s);
-        ctx.fillRect(x, y, 2*s, s);
-        x = x+ 10;
-        y = y+ 50;
-        ctx.fillRect(x, y, 2*s, s);
+             
+        for (var i = 0; i < n; i = i + 1) {
+        ctx.fillRect(x+offsetSq, y+offsetSq, 2*s, s);
+        offsetSq = (offsetSq+offset);
+        }
     }
     if (elementType === `triangle`) {
+
         ctx.beginPath();
-        ctx.moveTo(x, y);
-        ctx.lineTo(x+s/2, y+s/2);
-        ctx.lineTo(x-s/2, y+s/2);
-        ctx.lineTo(x, y);
+        for (var i = offsetSq; i <= 200; i = i + n) {
+        ctx.moveTo(x+i, y+i);
+        ctx.lineTo(x+s/4*3+i, y+s/4*3+i);
+        ctx.lineTo(x-s/4*3+i, y+s/4*3+i);
+        ctx.lineTo(x+i, y+i);
         ctx.stroke();
+        }
     }
     if (elementType === `circle`) {
         ctx.beginPath();
-        ctx.arc(x, y, s, 0, 2 * Math.PI);
+        for (var i = 0; i <= n; i = i + 1) {
+        ctx.arc(x, y, s+offsetSq, 0, 2 * Math.PI);
         ctx.stroke();
+        offsetSq = (offsetSq+offset)
+        }
     }
     if (elementType === `lines`) {
         for (var i = 0; i < n; i = i + 1) {
@@ -109,20 +114,7 @@ $(`#elementsSize`).change(function () {
 $(`#elementsType`).change(function () {
     elementType = $(`#elementsType`).val();
     console.log(elementType);
-    let c = document.getElementById("myCanvas");
-    let ctx = c.getContext("2d");
-    ctx.clearRect(0, 0, c.width, c.height);
-    
-    if (elementType === `square`) {
-       
-        ctx.fillRect(20, 20, s, s);
-    }
 
-    if (elementType === `circle`) {
-        ctx.beginPath();
-        ctx.arc(95, 50, 40, 0, 2 * Math.PI);
-        ctx.stroke();
-    }
 
 
 
