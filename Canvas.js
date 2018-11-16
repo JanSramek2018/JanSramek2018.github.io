@@ -39,6 +39,7 @@ $(`#elementsSize`).change(function () {
     if (elementType === `square`) {
         var c = document.getElementById("myCanvas");
         var ctx = c.getContext("2d");
+        ctx.clearRect(0, 0, 750, 300);
         ctx.fillRect(20, 20, s, s);
     }
 
