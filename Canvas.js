@@ -1,12 +1,9 @@
 
-function drawLine(x1, y1, x2, y2) {
-    ctx.beginPath();
-    ctx.moveTo(x1, y1);
-    ctx.lineTo(x2, y2);
-    ctx.stroke();
-}
+
 
 function drawCanvas() {
+
+   
 
     let elementType = 0;
     let n = 0;
@@ -42,6 +39,7 @@ function drawCanvas() {
     let ctx = c.getContext("2d");
     let w = c.width;
     let h = c.height;
+    let offsetSq = offset;
 
     ctx.clearRect(0, 0, w, h);
     ctx.fillStyle = `rgba(${r},${g},${b},${t})`;
@@ -81,6 +79,14 @@ function drawCanvas() {
     }
     if (elementType === `lines`) {
         for (var i = 0; i < n; i = i + 1) {
+
+            function drawLine(x1, y1, x2, y2) {
+                ctx.beginPath();
+                ctx.moveTo(x1, y1);
+                ctx.lineTo(x2, y2);
+                ctx.stroke();
+            }
+
             var xl = i * w / (n - 1);
             var yl = i * h / (n - 1);
             drawLine(0, yl, xl, h);
@@ -94,7 +100,6 @@ $(`#elementsSize`).change(function () {
 
     drawCanvas();
 });
-
 
 $(`#elementsNumber`).change(function () {
 
