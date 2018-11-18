@@ -46,8 +46,8 @@ html {
                 }
 .elements {
     display: block;
-    padding: 0 0 10px 0;
-    font-size: 18px;
+    padding: 0 0 0px 0;
+    font-size: 14px;
         }   
 input[type=radio] {
     display: block;

@@ -24,47 +24,56 @@
 
         <h2>Canvas</h2>
 
-        <div class="elements">
-            <h4>Elements type</h4>
-            <select id="elementsType">
-                <option value="square" selected>Square</option>
-                <option value="rectangular">Rectangular</option>
-                <option value="triangle">Triangle</option>
-                <option value="circle">Circle</option>
-                <option value="lines" selected>Lines</option>
-            </select>
-        </div>
-        <div class="elements">
-            <h4>Number of elements</h4>
-            <input id="elementsNumber" type="range" min="1" max="300" value="5">
-        </div>
-        <div class="elements">
-            <h4>Size of elements</h4>
-            <input id="elementsSize" type="range" min="10" max="200" value="10">
-        </div>
-        <div class="elements">
-            <h4>Elements position</h4>
-            <p>X Axis</p>
-            <input id="elementsX" type="range" min="1" max="750" value="10">
-            <p>Y Axis</p>
-            <input id="elementsY" type="range" min="1" max="300" value="10">
-            <p>Offset</p>
-            <input id="offset" type="range" min="1" max="75" value="10">
-        </div>
-        <div class="elements">
-            <h4>Elements color</h4>
-            <p>Red</p>
-            <input id="elementsR" type="range" min="1" max="255" value="0">
-            <p>Green</p>
-            <input id="elementsG" type="range" min="1" max="255" value="0">
-            <p>Blue</p>
-            <input id="elementsB" type="range" min="1" max="255" value="0">
-            <p>Transparency</p>
-            <input id="elementsT" type="range" min="1" max="100" value="100">
-        </div>
-
-
         <canvas id="myCanvas" width="750" height="300" style="border:1px solid #000000;"></canvas>
+
+        <h4>Element settings</h4>
+        <div class="elements">
+            <label>Elements type
+                <select id="elementsType">
+                    <option value="square" selected>Square</option>
+                    <option value="rectangular">Rectangular</option>
+                    <option value="triangle">Triangle</option>
+                    <option value="circle">Circle</option>
+                    <option value="lines" selected>Lines</option>
+                </select>
+            </label>
+            <label>Number of elements
+                <input id="elementsNumber" type="range" min="1" max="300" value="100">
+            </label>
+            <label>Size of elements
+                <input id="elementsSize" type="range" min="10" max="150" value="100">
+            </label>
+        </div>
+        <h4>Elements position</h4>
+        <div class="elements">
+            <label>X Axis
+                <input id="elementsX" type="range" min="1" max="750" value="150">
+            </label>
+            <label>Y Axis
+                <input id="elementsY" type="range" min="1" max="300" value="50">
+            </label>
+            <label>Offset
+                <input id="offset" type="range" min="1" max="75" value="5">
+            </label>
+        </div>
+        <h4>Elements color</h4>
+        <div class="elements">
+            <label>Red
+                <input id="elementsR" type="range" min="1" max="255" value="49">
+            </label>
+            <label>Green
+                <input id="elementsG" type="range" min="1" max="255" value="99">
+            </label>
+            <label>Blue
+                <input id="elementsB" type="range" min="1" max="255" value="200">
+            </label>
+            <label>Transparency
+                <input id="elementsT" type="range" min="1" max="100" value="60">
+            </label>
+        </div>
+
+
+        
 
         <div id="footer">Designed by Jan Šrámek</div>
     </div>

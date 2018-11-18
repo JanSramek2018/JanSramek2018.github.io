@@ -97,6 +97,8 @@ function drawCanvas() {
     }
 }
 
+drawCanvas();
+
 $(`#elementsSize`).change(function () {
 
     drawCanvas();
