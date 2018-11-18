@@ -16,6 +16,8 @@ function drawCanvas() {
     let b = 0;
     let t = 0;
 
+    elementType = $(`#elementsType`).val();
+    console.log(`elementType=${elementType}`);
     n = $(`#elementsNumber`).val() * 1;
     console.log(`n=${n}`);
     s = $(`#elementsSize`).val() * 1;
@@ -40,6 +42,10 @@ function drawCanvas() {
     let w = c.width;
     let h = c.height;
     let offsetSq = offset;
+    console.log(`w=${w}`);
+    console.log(`h=${h}`);
+    console.log(`offsetSq=${offsetSq}`);
+
 
     ctx.clearRect(0, 0, w, h);
     ctx.fillStyle = `rgba(${r},${g},${b},${t})`;
