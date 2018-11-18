@@ -1,9 +1,4 @@
-
-
-
 function drawCanvas() {
-
-   
 
     let elementType = 0;
     let n = 0;
@@ -67,7 +62,7 @@ function drawCanvas() {
     if (elementType === `triangle`) {
 
         ctx.beginPath();
-        for (var i = offsetSq; i <= 200; i = i + n) {
+        for (var i = offsetSq; i <= 300; i = i + n / 5) {
             ctx.moveTo(x + i, y + i);
             ctx.lineTo(x + s / 4 * 3 + i, y + s / 4 * 3 + i);
             ctx.lineTo(x - s / 4 * 3 + i, y + s / 4 * 3 + i);
