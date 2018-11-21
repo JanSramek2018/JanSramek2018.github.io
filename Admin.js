@@ -71,4 +71,7 @@ $(`.postSec`).on(`click`, `button`, btn => {
     $(`#id${removeID}`).remove();
     fb.ref(`posts/${removeID}`).remove();
     console.log(`Removing ${removeID}`);
+    fb.ref("posts").once('value').then(data => {
+        let savedPosts = data.val();
+        base = savedPosts.length;});
 })
