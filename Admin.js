@@ -16,7 +16,7 @@ fb.ref("posts").once('value').then(data => {
         $(`.postSec`).prepend(`<div id="id${post[`postId`]}">
                     <h4 class="tittle">${post[`tittle`]}</h4>
                     <div class="post">${post[`text`]}</div>
-                    <div class="delete"><button id="id${post[`postId`]}">Delete</button></div>
+                    <div class="delete"><button id="${post[`postId`]}">Delete</button></div>
         </div>`);
 
 
@@ -54,7 +54,7 @@ $(`form`).on(`submit`, event => {
                 `<div id="id${postInfo[`postId`]}">
                     <h4 class="tittle">${postInfo[`tittle`]}</h4>
                     <div class="post">${postInfo[`text`]}</div>
-                    <div class="delete"><button id="id${postInfo[`postId`]}">Delete</button></div>
+                    <div class="delete"><button id="${postInfo[`postId`]}">Delete</button></div>
                 </div>`);
             base = counter;
                 
@@ -67,8 +67,8 @@ $(`form`).on(`submit`, event => {
 
 // Smazani prispevku
 $(`.postSec`).on(`click`, `button`, btn => {
-    console.log($(btn.target).attr(`id`));
     removeID = $(btn.target).attr(`id`);
+    $(`#id${removeID}`).remove();
     fb.ref(`posts/${removeID}`).remove();
-    console.log(`${removeID}`);
+    console.log(`Removing ${removeID}`);
 })
