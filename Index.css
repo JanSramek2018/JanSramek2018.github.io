@@ -104,6 +104,17 @@ input {
     overflow: auto;
     padding: 0px 0px 5px 0px;
 }
+.postMainPage{
+    display:block;
+    height: auto;
+    width: 730px;
+    resize: none;
+    margin: 10px 10px 5px 10px;
+    word-wrap:break-word;
+    overflow: auto;
+    padding: 0px 0px 40px 0px;
+    border-bottom: 1px solid rgb(146, 146, 146);
+}
 
 .delete {
     display: block;
