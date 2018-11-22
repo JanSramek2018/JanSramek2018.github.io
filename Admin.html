@@ -21,18 +21,21 @@
                 <a href="Admin.html" class="topMenu">Admin</a>
             </div>
         </h4>
-        <h2>Add a new post</h2>
+        <h2>Add a new post or update older posts</h2>
         <h4>
             <form>
                 <label>Title
-                    <input type="text" placeholder="Please, write your post's tittle" name="inputTittle">
+                    <input type="text" id="inputTittle" placeholder="Please, write your post's tittle" name="inputTittle">
                 </label>
                 <label>Content
-                    <textarea name="inputPost" placeholder="Please, write your post here"></textarea>
+                    <textarea name="inputPost" id="inputPostText" placeholder="Please, write your post here"></textarea>
                 </label>
                 <input type="submit" id="idSubmit">
+                <br>
+                <textarea name="inputPost" id="inputPostId" placeholder="Post Id"></textarea>
+                <button id="updateBtn">Update post</button>
             </form>
-            <button id="update">Update post</button>
+            
         </h4>
 
         <h2>Posts</h2>

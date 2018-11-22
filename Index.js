@@ -14,7 +14,6 @@ fb.ref("posts").once('value').then(data => {
         $(`.postSec`).prepend(`<div id="id${post[`postId`]}">
                     <h4 class="tittle">${post[`tittle`]}</h4>
                     <div class="post">${post[`text`]}</div>
-                    <div class="delete"><button id="id${post[`postId`]}">Delete</button></div>
         </div>`);
 })
 })

@@ -83,7 +83,7 @@ input {
     border: 1px solid black;
 }
 .tittle{
-    display:block;
+    display: inline-block;
     height: auto;
     width: 730px;
     resize: none;
@@ -113,12 +113,19 @@ input {
     margin: 0px 10px 20px 10px;
     padding: 0px 0px 5px 0px;
 }
-textarea{
+#inputPostText{
     display:block;
     height: 100px; 
     width: 750px;
     resize: none;
 }
+#inputPostId{
+    display:block;
+    height: 22px; 
+    width: 88px;
+    resize: none;
+}
+
 #footer {
     text-align: right;
     width: 750px;
