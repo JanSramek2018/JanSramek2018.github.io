@@ -41,9 +41,35 @@ html {
     font-size: 50px;
     font-weight: bold;
     }
-    #counterNumber {
-        padding: 0px 0 5px 0px;
-                }
+#counterNumber {
+    padding: 0px 0 5px 0px;
+    }
+
+// Calculator parts
+
+.calculator {
+    display:block;
+    height: auto;
+    width: 200px;
+    resize: none;
+    margin: 10px 10px 5px 10px;
+    padding: 0px 0px 500px 0px;
+}
+#displayNumber {
+    padding: 10px 10px 10px 10px;
+    text-align-last: right;
+    }
+.calculatorKeys {
+    background-color: #999;
+    display: grid;
+    grid-gap: 1px;
+    grid-template-columns: repeat(4, 1fr);
+    }
+#equalKey {
+    grid-column: -2;
+    grid-row: 2 / span 4;
+    }
+
 .elements {
     display: block;
     padding: 0 0 0px 0;

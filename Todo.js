@@ -1,6 +1,7 @@
 let base = 0;
 let counter = 0;
 let todosDB;
+let completionStatus;
 
 // Nacteni poctu ulozenych prispevku
 
@@ -29,10 +30,12 @@ $(`form`).on(`submit`, event => {
 
     if (todoCount > 0) {
         counter = base + 1;
+        completionStatus = 0;
         let path = `todos/${base}`;
         let todoInfo = {
             textId: `${todoText}`,
-            todoId: `${base}`
+            todoId: `${base}`,
+            todoCompleted: `${completionStatus}`
         };
         fb.ref(path).set(todoInfo);
         $(`ul`).append(`<li id="id${todoInfo[`todoId`]}">${todoInfo[`textId`]}</li>`);
@@ -42,6 +45,7 @@ $(`form`).on(`submit`, event => {
 
     $(`#id${base}`).on(`click`, event => {
         $(event.target).toggleClass(`wLine`);
+        
     });
 
 })
