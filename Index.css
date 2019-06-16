@@ -48,7 +48,7 @@ html {
 // Calculator parts
 
 .calculator {
-    display:block;
+    display: block;
     height: auto;
     width: 200px;
     resize: none;
@@ -102,7 +102,7 @@ input {
     text-align: center;
 }
 .postSec{
-    display:block;
+    display: block;
     height: auto;
     width: 750px;
     resize: none;
