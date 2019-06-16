@@ -22,15 +22,12 @@
             </div>
         </h4>
    
-        <h2>Todo list</h2>
-            <ul>
-                
-            </ul>
-            <form>
-                <input type="text", name="todo">
-                <button type="submit">Add todo</button>
-            </form>
-        
+        <h2>Counter</h2>
+        <div class="counter">
+            <div id="counterNumber">0</div>
+            <button type="button" id="Increase">Increase</button>
+            <button type="button" id="Decrease">Decrease</button>
+        </div>
 
         <div id="footer">Designed by Jan Šrámek</div>
     </div>
@@ -50,7 +47,7 @@
         firebase.initializeApp(config);
         fb = firebase.database();
     </script>
-    <script src="todo.js"></script>
+    <script src="counter.js"></script>
 
 
 </body>
