@@ -1,6 +1,7 @@
 const calculator = document.querySelector('.calculator');
 const keys = calculator.querySelector('.calculatorKeys');
 const display = document.querySelector('#displayNumber');
+var decimalKeyPressed = 0;
 
 keys.addEventListener('click', e => {
     if (e.target.matches('button')) {
@@ -9,7 +10,6 @@ keys.addEventListener('click', e => {
         const keyContent = key.textContent;
         const displayedNumber = display.textContent;
         const previousKeyType = calculator.dataset.previousKeyType;
-
 
         if (!action) {
             console.log('number key was pressed');
@@ -39,9 +39,15 @@ keys.addEventListener('click', e => {
             console.log('Stored number is ', displayedNumber);
             calculator.dataset.operator = action;
         }
-        if (action === 'decimal') {
+        if (action === `decimal`) {
             console.log('decimal key was pressed');
+            console.log(`Was decimal key pressed? `, decimalKeyPressed);
+            if (decimalKeyPressed = 0) {
+
             display.textContent = displayedNumber + '.';
+            decimalKeyPressed = 1;
+        }
+            console.log(`Was decimal key pressed? `, decimalKeyPressed);
         }
 
         if (action === 'delete') {

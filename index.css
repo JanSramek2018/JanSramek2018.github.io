@@ -46,17 +46,22 @@ html {
     }
 
 .calculator {
-    display:block;
+    display:inline-block;
     height: auto;
     width: 200px;
     resize: none;
     margin: 10px 10px 10px 10px;
-    padding: 10px 10px 10px 10px;
-    align-content: center
+    padding: 5px 5px 5px 5px;
+    text-align: center;
+    border: 1px solid black;
 }
+#displayPadding {
+    padding: 5px 0px 0px 0px;
+    }
 #displayNumber {
     padding: 10px 10px 10px 10px;
     text-align-last: right;
+    border: 1px solid black;
     }
 .calculatorKeys {
     background-color: #999;
