@@ -15,6 +15,14 @@ keys.addEventListener('click', e => {
         if (!action) {
             console.log('number key was pressed');
 
+            if (previousKeyType === `calculate`) {
+                calculator.dataset.firstNumber = ``;
+                calculator.dataset.secondNumber = ``;
+                calculator.dataset.previousSecondNumber = ``;
+                calculator.dataset.operator = ``;
+                calculator.dataset.previousKeyType = 'delete';
+            }
+
             if (displayedNumber === '0' ||
                 previousKeyType === 'operator' ||
                 previousKeyType === 'calculate'
@@ -35,9 +43,9 @@ keys.addEventListener('click', e => {
             console.log('operator key was pressed');
             decimalKeyPressed = 0;
             console.log(`Is decimal active? `, decimalKeyPressed);
-            
-            
-            
+
+
+
 
             const firstNumber = calculator.dataset.firstNumber;
             const secondNumber = displayedNumber;
@@ -63,15 +71,15 @@ keys.addEventListener('click', e => {
             }
 
             if (firstNumber &&
-                operator && 
-                previousKeyType !== `operator`&& 
+                operator &&
+                previousKeyType !== `operator` &&
                 previousKeyType !== `calculate`
-                ) {
+            ) {
                 const calculationNumber = calculate(firstNumber, operator, secondNumber);
                 display.textContent = calculationNumber;
                 calculator.dataset.firstNumber = calculationNumber;
                 console.log(`AAAA`);
-              }
+            }
             else {
                 calculator.dataset.firstNumber = displayedNumber
                 console.log(`BBBB`);
@@ -86,16 +94,18 @@ keys.addEventListener('click', e => {
             if (decimalKeyPressed === 0) {
 
                 if (previousKeyType === `operator` ||
-                previousKeyType === `calculate`
+                    previousKeyType === `calculate`
                 ) {
                     display.textContent = `0` + '.';
 
-                    decimalKeyPressed = 1;}
+                    decimalKeyPressed = 1;
+                }
                 else {
                     display.textContent = displayedNumber + '.';
-                    decimalKeyPressed = 1;}
-            calculator.dataset.previousKeyType = 'decimal';
-            }           
+                    decimalKeyPressed = 1;
+                }
+                calculator.dataset.previousKeyType = 'decimal';
+            }
             console.log(`Is decimal active? `, decimalKeyPressed);
         }
 
@@ -154,5 +164,5 @@ keys.addEventListener('click', e => {
 
 
 
-    }
+}
 )
