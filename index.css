@@ -1,11 +1,24 @@
 html {
+    background-image: url(Index_wallpaper.jpg);
     background-color: rgb(247, 247, 247);
-    margin: 20px 30px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
+
 #mainContainer {
     
-    width: 800px;
+    
+    width: 750px;
+    
     margin: auto;
+    align-content: center;
+    
+
+}
+
+h3 {
+    margin: 10px 0 10px 10px;
 }
 #logo {
     background-color: black;
@@ -26,6 +39,7 @@ html {
     text-indent: 5px;
     border-radius: 5px;
     display: inline-block;
+    margin: 0 0 0 0;
     }
 .topMenu {
     color: white;
@@ -74,15 +88,26 @@ html {
     grid-row: 2 / span 4;
     }
 
+.elementsSec{
+    display:block;
+    height: auto;
+    width: 748px;
+    resize: none;
+    border: 1px solid black;
+    background-color: rgba(247, 247, 247, 0.7);
+    margin: 10px 0 0 0;
+}
+
 .elements {
     display: block;
-    padding: 0 0 0px 0;
+    padding: 0 10px 0px 10px;
     font-size: 14px;
+    
         }   
 input[type=radio] {
     display: block;
     border: 0px;
-    width: 100%;
+    width: 725px;
     height: 1em;
     align-content: left;
 
@@ -98,7 +123,7 @@ label {
 input {
     display:block;
     height: 22px;
-    width: 750px;
+    width: 725px;
     text-align: left;
 }
 #idSubmit {
@@ -108,9 +133,10 @@ input {
 .postSec{
     display:block;
     height: auto;
-    width: 750px;
+    width: 748px;
     resize: none;
     border: 1px solid black;
+    background-color: rgba(247, 247, 247, 0.7);
 }
 .tittle{
     display: inline-block;
@@ -123,6 +149,11 @@ input {
     text-decoration-line: underline;
     font-weight: bold;
     
+}
+
+#inputTittle {
+    width: 748px;
+    background-color: rgba(247, 247, 247, 0.7);
 }
 .post{
     display:block;
@@ -157,24 +188,36 @@ input {
 #inputPostText{
     display:block;
     height: 100px; 
-    width: 750px;
+    width: 748px;
     resize: none;
+    background-color: rgba(247, 247, 247, 0.7);
 }
 #inputPostId{
     display:block;
     height: 22px; 
     width: 88px;
     resize: none;
+    background-color: rgba(247, 247, 247, 0.7);
 }
 
 #footer {
     text-align: right;
     width: 750px;
     margin: 10px 0 0 0;
-    color: rgb(146, 146, 146);
+    color: rgb(190, 190, 190);
 }
+
 .statsBandit {
-    display: block;
+    display:block;
+    height: auto;
+    width: 748px;
+    resize: none;
+    border: 1px solid black;
     text-align: right;
     align-content: right;
+    background-color: rgba(247, 247, 247, 0.5);
+}
+
+.topmenu:hover {
+    border-bottom: 1px solid white;
 }
