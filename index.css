@@ -4,6 +4,7 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    font-family: 'Roboto', sans-serif;
 }
 
 #mainContainer {
@@ -22,6 +23,7 @@ h3 {
 }
 #logo {
     background-color: black;
+    font-family: 'Oswald', sans-serif;
     color: white;
     width: 750px;
     height: 45px;
@@ -29,10 +31,12 @@ h3 {
     border-radius: 5px;
     vertical-align: -webkit-baseline-middle;
     font-size: 37px;
+
     
     }
 #menu {
     background-color: black;
+    font-family: 'Oswald', sans-serif;
     color: white;
     width: 750px;
     height: 28px;
