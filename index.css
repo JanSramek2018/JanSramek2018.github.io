@@ -23,20 +23,20 @@ h3 {
 }
 #logo {
     background-color: black;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Roboto', sans-serif;
     color: white;
     width: 750px;
     height: 45px;
     text-indent: 10px;
     border-radius: 5px;
     vertical-align: -webkit-baseline-middle;
-    font-size: 37px;
+    font-size: 35px;
 
     
     }
 #menu {
     background-color: black;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Roboto', sans-serif;
     color: white;
     width: 750px;
     height: 28px;
