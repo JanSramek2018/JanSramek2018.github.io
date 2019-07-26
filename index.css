@@ -7,20 +7,22 @@ html {
     font-family: 'Roboto', sans-serif;
 }
 
-#mainContainer {
-    
-    
+#mainContainer {   
     width: 750px;
-    
     margin: auto;
     align-content: center;
-    
-
 }
 
 h3 {
     margin: 10px 0 10px 10px;
 }
+
+img {
+    width: 30%;
+    float: left;
+    margin: 1.66%;
+}
+
 #logo {
     background-color: black;
     font-family: 'Roboto', sans-serif;
