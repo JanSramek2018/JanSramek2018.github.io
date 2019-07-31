@@ -218,6 +218,7 @@ input {
     width: 100%;
     resize: none;
     background-color: rgba(247, 247, 247, 0.7);
+    margin: 0 0 10px 0;
 }
 
 #inputPostId{
