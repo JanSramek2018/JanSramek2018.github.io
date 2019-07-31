@@ -13,12 +13,12 @@ fb.ref("todos").once('value').then(data => {
     // Nacteni ulozenych prispevku
 
     todosDB.forEach(todo => {
-        $(`#todoList`).append(`<li id="ID${todo[`todoId`]}">${todo[`textId`]}</li>`);
+        $(`#todoList`).append(`<tr> <td id="ID${todo[`todoId`]}">${todo[`textId`]} </td> </tr>`);
     });
 });
 
 $(`#todoList`).on(`click`, event => {
-    $(event.target).toggleClass(`wLine`);
+    $(event.target).toggleClass(`wLine success`);
 })
 
 // Kliknuti na Submit
@@ -38,13 +38,13 @@ $(`form`).on(`submit`, event => {
             todoCompleted: `${completionStatus}`
         };
         fb.ref(path).set(todoInfo);
-        $(`#todoList`).append(`<li id="id${todoInfo[`todoId`]}">${todoInfo[`textId`]}</li>`);
+        $(`#todoList`).append(`<tr> <td id="id${todoInfo[`todoId`]}">${todoInfo[`textId`]} </td> </tr>`);
         base = counter;
     }
     else { alert(`Your Todo is empty`) };
 
     $(`#id${base}`).on(`click`, event => {
-        $(event.target).toggleClass(`wLine`);
+        $(event.target).toggleClass(`wLine success`);
         
     });
 
