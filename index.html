@@ -1,38 +1,56 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="index.css">
+    <title>Index</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Oswald:400,700|Roboto:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
 </head>
 
-
-
 <body>
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <div class="container-fluid">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">Jan Šrámek</a>
+                        </div>
+                    
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="index.html">Home</a></li>
+                            <li><a href="counter.html">Counter</a></li>
+                            <li><a href="todo.html">Todo list</a></li>
+                            <li><a href="calculator.html">Calculator</a></li>
+                            <li><a href="canvas.html">Canvas</a></li>
+                            <li><a href="ridingStats.html">Riding Stats</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="admin.html"><i class="fas fa-user-cog"></i> Admin</a></li>
+                        </ul>
+                        </div><!-- /.navbar-collapse -->
+                    </div><!-- /.container-fluid -->
+                </div>
+                    </nav>
+
     <div id="mainContainer">
         <div>
-            <div id=logo> JS projects</div>
-        </div>
-        <h4>
-            <div id=menu>
-                <a href="index.html" class="topMenu">Main page</a>
-                <a href="counter.html" class="topMenu">Counter</a>
-                <a href="todo.html" class="topMenu">Todo List</a>
-                <a href="calculator.html" class="topMenu">Calculator</a>
-                <a href="canvas.html" class="topMenu">Canvas</a>
-                <a href="ridingStats.html" class="topMenu">Riding Stats</a>
-                <a href="gallery.html" class="topMenu">Gallery</a>
-                <a href="admin.html" class="topMenu">Admin</a>
-            </div>
-        </h4>
-   
         <h2>Posts</h2>
         <div class="postSec">
         </div>
-
-        <div id="footer">Designed by Jan Šrámek</div>
+         <div id="footer">Designed by Jan Šrámek</div>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
     <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
     <script>
         // Initialize Firebase
@@ -48,6 +66,8 @@
         fb = firebase.database();
     </script>
     <script src="index.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/1d25ec85ae.js"></script>
 
 
 </body>

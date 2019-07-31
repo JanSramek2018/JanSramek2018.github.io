@@ -1,14 +1,28 @@
-html {
+/* General CSS */
+
+html {   
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    padding-top: 70px;
     background-image: url(Index_wallpaper.jpg);
     background-color: rgb(247, 247, 247);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    font-family: 'Roboto', sans-serif;
 }
 
-#mainContainer {   
-    width: 750px;
+.jumbotron {
+    background-color: rgba(247, 247, 247, 0.5);
+}
+
+.navbar-default {
+    background-color: rgba(247, 247, 247, 0.99);
+}
+
+#mainContainer {     
+    max-width: 900px;
     margin: auto;
     align-content: center;
 }
@@ -17,25 +31,6 @@ h3 {
     margin: 10px 0 10px 10px;
 }
 
-img {
-    width: 30%;
-    float: left;
-    margin: 1.66%;
-}
-
-#logo {
-    background-color: black;
-    font-family: 'Roboto', sans-serif;
-    color: white;
-    width: 750px;
-    height: 45px;
-    text-indent: 10px;
-    border-radius: 5px;
-    vertical-align: -webkit-baseline-middle;
-    font-size: 35px;
-
-    
-    }
 #menu {
     background-color: black;
     font-family: 'Roboto', sans-serif;
@@ -47,6 +42,7 @@ img {
     display: inline-block;
     margin: 0 0 0 0;
     }
+
 .topMenu {
     color: white;
     text-decoration-line: none;
@@ -54,6 +50,17 @@ img {
     padding: 0px 0px 0px 0px;
     vertical-align: -webkit-baseline-middle;
 }
+
+#footer {
+    text-align: right;
+    width: 100%;
+    margin: 10px 0 10px 0;
+    padding: 0 5px 0 0;
+    color: white;
+}
+
+/* Counter CSS */
+
 .counter {
     text-align: center;
     display: block;
@@ -65,77 +72,92 @@ img {
     padding: 0px 0 5px 0px;
     }
 
+/* Calculator CSS */
+
 .calculator {
     display:inline-block;
     height: auto;
-    width: 200px;
+    width: 230px;
     resize: none;
-    margin: 10px 10px 10px 10px;
     padding: 5px 5px 5px 5px;
     text-align: center;
     border: 1px solid black;
+    background-color: rgba(238, 238, 238, 0.9);
 }
+
 #displayPadding {
     padding: 5px 0px 0px 0px;
     }
+
 #displayNumber {
     padding: 10px 10px 10px 10px;
     text-align-last: right;
     border: 1px solid black;
     }
+
 .calculatorKeys {
-    background-color: #999;
     display: grid;
-    grid-gap: 1px;
+    grid-gap: 2px;
     grid-template-columns: repeat(4, 1fr);
     }
+
 #equalKey {
     grid-column: -2;
     grid-row: 2 / span 4;
     }
 
-.elementsSec{
-    display:block;
-    height: auto;
-    width: 748px;
-    resize: none;
-    border: 1px solid black;
-    background-color: rgba(247, 247, 247, 0.7);
-    margin: 10px 0 0 0;
-}
+/* Canvas CSS */ 
 
 .elements {
     display: block;
     padding: 0 10px 0px 10px;
     font-size: 14px;
-    
-        }   
-input[type=radio] {
-    display: block;
-    border: 0px;
-    width: 725px;
-    height: 1em;
-    align-content: left;
+        }  
 
+.elementsSec {
+    background-color: rgba(247, 247, 247, 0.9);
+    padding: 5px 0 5px 0;
+    margin: 10px 0 0 0;
+        } 
 
-}                      
+canvas {
+    flex: 1 1 auto;
+    border: 1px solid white;
+}
+     
+/* Riding Stats CSS */ 
+
+.statsBandit {
+    display:block;
+    height: auto;
+    text-align: right;
+    align-content: right;
+    background-color: rgba(247, 247, 247, 0.5);
+}       
+
+/* Blog and Todo CSS */ 
+               
 .wLine {
     text-decoration: line-through;
 }
+
 label {
     display: block;
     margin: 0px 0px 20px;
 }
+
 input {
     display:block;
     height: 22px;
     width: 725px;
     text-align: left;
 }
+
 #idSubmit {
     width: 85px;
     text-align: center;
 }
+
 .postSec{
     display:block;
     height: auto;
@@ -144,6 +166,7 @@ input {
     border: 1px solid black;
     background-color: rgba(247, 247, 247, 0.7);
 }
+
 .tittle{
     display: inline-block;
     height: auto;
@@ -161,6 +184,7 @@ input {
     width: 748px;
     background-color: rgba(247, 247, 247, 0.7);
 }
+
 .post{
     display:block;
     height: auto;
@@ -171,6 +195,7 @@ input {
     overflow: auto;
     padding: 0px 0px 5px 0px;
 }
+
 .postMainPage{
     display:block;
     height: auto;
@@ -191,6 +216,7 @@ input {
     margin: 0px 10px 20px 10px;
     padding: 0px 0px 5px 0px;
 }
+
 #inputPostText{
     display:block;
     height: 100px; 
@@ -198,32 +224,11 @@ input {
     resize: none;
     background-color: rgba(247, 247, 247, 0.7);
 }
+
 #inputPostId{
     display:block;
     height: 22px; 
     width: 88px;
     resize: none;
     background-color: rgba(247, 247, 247, 0.7);
-}
-
-#footer {
-    text-align: right;
-    width: 750px;
-    margin: 10px 0 0 0;
-    color: rgb(190, 190, 190);
-}
-
-.statsBandit {
-    display:block;
-    height: auto;
-    width: 748px;
-    resize: none;
-    border: 1px solid black;
-    text-align: right;
-    align-content: right;
-    background-color: rgba(247, 247, 247, 0.5);
-}
-
-.topmenu:hover {
-    border-bottom: 1px solid white;
 }
